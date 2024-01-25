@@ -7,7 +7,7 @@
         type="text"
         class="form-control"
         id="title"
-        [(ngModel)]="currentTutorial.title"
+        [(ngModel)]="currentTutorial.appPaterno"
         name="title"
       />
     </div>
@@ -17,17 +17,22 @@
         type="text"
         class="form-control"
         id="description"
-        [(ngModel)]="currentTutorial.description"
+        [(ngModel)]="currentTutorial.appMaterno"
         name="description"
       />
+    
     </div>
 
+    <!--
     <div class="form-group">
       <label><strong>Status:</strong></label>
       {{ currentTutorial.published ? "Published" : "Pending" }}
     </div>
+-->
+
   </form>
 
+  <!--
   <button
     class="badge badge-primary mr-2"
     *ngIf="currentTutorial.published"
@@ -35,6 +40,7 @@
   >
     UnPublish
   </button>
+  
   <button
     *ngIf="!currentTutorial.published"
     class="badge badge-primary mr-2"
@@ -42,6 +48,7 @@
   >
     Publish
   </button>
+-->
 
   <button class="badge badge-danger mr-2" (click)="deleteTutorial()">
     Delete
