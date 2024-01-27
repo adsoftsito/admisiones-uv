@@ -1,28 +1,97 @@
 <div *ngIf="currentTutorial" class="edit-form">
-  <h4>Tutorial</h4>
+  <h4>Datos del estudiante</h4>
   <form>
     <div class="form-group">
-      <label for="title">Title</label>
+      <label for="title">Ap. Paterno</label>
       <input
         type="text"
         class="form-control"
-        id="title"
+        id="appPaterno"
         [(ngModel)]="currentTutorial.appPaterno"
-        name="title"
+        name="appPaterno"
       />
     </div>
     <div class="form-group">
-      <label for="description">Description</label>
+      <label for="description">Ap. Materno</label>
       <input
         type="text"
         class="form-control"
-        id="description"
+        id="appMaterno"
         [(ngModel)]="currentTutorial.appMaterno"
-        name="description"
+        name="appMaterno"
       />
     
     </div>
 
+    <div class="form-group">
+      <label for="description">Nombre</label>
+      <input
+        type="text"
+        class="form-control"
+        id="nombre"
+        [(ngModel)]="currentTutorial.nombre"
+        name="nombre"
+      />
+    
+    </div>
+
+    <div class="form-group">
+      <label for="description">Programa de interes</label>
+      <input
+        type="text"
+        class="form-control"
+        id="programaInteres"
+        [(ngModel)]="currentTutorial.programaInteres"
+        name="programaInteres"
+      />
+    
+    </div>
+
+    <div class="form-group">
+      <label for="description">Escuela procedencia</label>
+      <input
+        type="text"
+        class="form-control"
+        id="bachilleratoProcedencia"
+        [(ngModel)]="currentTutorial.bachilleratoProcedencia"
+        name="bachilleratoProcedencia"
+      />
+    
+    </div>
+
+    <div class="form-group">
+      <label for="description">Telefono</label>
+      <input
+        type="text"
+        class="form-control"
+        id="telefono"
+        [(ngModel)]="currentTutorial.telefono"
+        name="telefono"
+      />
+    
+    </div>
+    <div class="form-group">
+      <label for="description">e-mail</label>
+      <input
+        type="text"
+        class="form-control"
+        id="email"
+        [(ngModel)]="currentTutorial.email"
+        name="email"
+      />
+    
+    </div>
+    <div class="form-group">
+      <label for="description">facebook/instagram</label>
+      <input
+        type="text"
+        class="form-control"
+        id="facebook"
+        [(ngModel)]="currentTutorial.facebook"
+        name="facebook"
+      />
+    
+    </div>
     <!--
     <div class="form-group">
       <label><strong>Status:</strong></label>
@@ -48,7 +117,7 @@
   >
     Publish
   </button>
--->
+
 
   <button class="badge badge-danger mr-2" (click)="deleteTutorial()">
     Delete
@@ -58,6 +127,7 @@
     Update
   </button>
   <p>{{ message }}</p>
+  -->
 </div>
 
 <div *ngIf="!currentTutorial">

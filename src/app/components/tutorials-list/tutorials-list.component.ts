@@ -13,18 +13,35 @@ export class TutorialsListComponent implements OnInit {
   currentTutorial?: Tutorial;
   currentIndex = -1;
   title = '';
+  programaInteres = '';
+  n = 0;
 
   constructor(private tutorialService: TutorialService) { }
 
   ngOnInit(): void {
-    this.retrieveTutorials();
+    //this.retrieveTutorialsByProgram('gestion');
   }
 
   refreshList(): void {
     this.currentTutorial = undefined;
     this.currentIndex = -1;
-    this.retrieveTutorials();
+    //this.retrieveTutorials();
   }
+
+  retrieveTutorialsByProgram(): void {
+    //lert(this.programaInteres)
+    this.tutorialService.getByProgram(this.programaInteres).snapshotChanges().pipe(
+      map(changes =>
+        changes.map(c =>
+          ({ id: c.payload.doc.id, ...c.payload.doc.data() })
+        )
+      )
+    ).subscribe(data => {
+      this.tutorials = data;
+      this.n = this.tutorials.length;
+    });
+  }
+
 
   retrieveTutorials(): void {
     this.tutorialService.getAll().snapshotChanges().pipe(

@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
+import { AngularFirestore, AngularFirestoreCollection} from '@angular/fire/compat/firestore';
+ 
+
 import { Tutorial } from '../models/tutorial.model';
 
 @Injectable({
@@ -16,6 +18,12 @@ export class TutorialService {
 
   getAll(): AngularFirestoreCollection<Tutorial> {
     return this.tutorialsRef;
+  }
+
+  getByProgram(programaInteres : string): AngularFirestoreCollection<Tutorial> {
+    //return this.db.collection(this.dbPath, ref => ref.where('programaInteres','==', programaInteres )).valueChanges()
+    //return this.tutorialsRef.('programaInteres','==', programaInteres)
+    return this.db.collection(this.dbPath, ref => ref.where('programaInteres', '==', programaInteres));
   }
 
   create(tutorial: Tutorial): any {
